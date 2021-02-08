@@ -1,22 +1,25 @@
-.header a.he
+.logo
 {
-    font-size: 25px;
-    font-weight: bold;  
+        float: left;
+        width: 120px;
+        height: 50px;  
+        
 }
 .header a:hover
 {
     background-color: #ddd;
     color: black;
 }
-.header-right a.act
+.header-left a.act
 {
     background-color: dodgerblue;
     color: ghostwhite;
 }
-.header-right
+.header-left
 {
  
-    float: right;
+    float: left;
+    margin-left: 10px;
 }
 .header
 {
@@ -34,4 +37,15 @@
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
+}
+.header-right a.sign
+{
+    background-color: dodgerblue;
+    color: ghostwhite;
+}
+.header-right
+{
+ 
+    float: right;
+    margin-right: 10px;
 }
