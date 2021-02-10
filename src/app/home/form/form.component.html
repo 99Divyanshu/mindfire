@@ -4,23 +4,23 @@
             <div class="col">
                 <div class="form-group"><!--form group is used for proper grouping -->
                     <label for="firstname">First Name</label>
-                    <input type="text"  class="form-control" placeholder="Enter your first name here....">
+                    <input [disabled]="isDisabled" type="text"  class="form-control" placeholder="Enter your first name here....">
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" placeholder="Enter your last name here....">
+                    <input [disabled]="isDisabled" type="text" class="form-control" placeholder="Enter your last name here....">
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email"  class="form-control" placeholder="Enter your E-mail ID here....">
+            <input [disabled]="isDisabled" type="email"  class="form-control" placeholder="Enter your E-mail ID here....">
         </div>
         <div class="form-group">
             <label for="contact">Contact No.</label>
-        <input type="text"  class="form-control" placeholder="Enter your contact no. here....">    
+        <input [disabled]="isDisabled" type="text"  class="form-control" placeholder="Enter your contact no. here....">    
         </div>
         
         <div class="row">
@@ -48,8 +48,8 @@
        
             
             <div class="row2">
-                <button  type="button" class="btn btn-primary">Submit</button>
-                <button  type="button" class="btn btn-danger">Clear</button>
+                <button [disabled]="isDisabled" type="button" class="btn btn-primary" >Submit</button>
+                <button  type="button" class="btn btn-danger" (click)="onClick()">Clear</button>
             </div>
                
     </form>

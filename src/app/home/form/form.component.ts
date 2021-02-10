@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  public isDisabled=true;
   constructor() { }
 
+  onClick()
+  {
+     alert("Fields Will be Enabled!!");
+     this.isDisabled=false;
+  }
   ngOnInit(): void {
   }
 
