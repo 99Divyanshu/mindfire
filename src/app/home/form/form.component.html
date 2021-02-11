@@ -1,26 +1,28 @@
 <div class="container form">
     <form >
+{{user | json}}
+
         <div class="row">
-            <div class="col">
+            <div class="col" >
                 <div class="form-group"><!--form group is used for proper grouping -->
                     <label for="firstname">First Name</label>
-                    <input [disabled]="isDisabled" type="text"  class="form-control" placeholder="Enter your first name here....">
+                    <input [(ngModel)]="user.first" [disabled]="isDisabled" type="text"  class="form-control" placeholder="Enter your first name here....">
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="lastname">Last Name</label>
-                    <input [disabled]="isDisabled" type="text" class="form-control" placeholder="Enter your last name here....">
+                    <input [(ngModel)]="user.last" [disabled]="isDisabled" type="text" class="form-control" placeholder="Enter your last name here....">
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input [disabled]="isDisabled" type="email"  class="form-control" placeholder="Enter your E-mail ID here....">
+            <input [(ngModel)]="user.email" [disabled]="isDisabled" type="email"  class="form-control" placeholder="Enter your E-mail ID here....">
         </div>
         <div class="form-group">
             <label for="contact">Contact No.</label>
-        <input [(ngModel)]="num"  type="text" class="form-control" name="f1" placeholder="Enter your contact no. here....">    
+        <input [(ngModel)]="user.phone"  [disabled]="isDisabled" type="tel" class="form-control" name="f1" placeholder="Enter your contact no. here....">    
         your contact no:{{num}}
         </div>
         
@@ -28,7 +30,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="state">State</label>
-                    <select name="state"  class="form-control" >
+                    <select name="state"  class="form-control" [(ngModel)]="user.state">
                         <option value="Select the State"  disabled hidden selected>Select the State...</option>
                         <option value="hp">Himachal Pradesh</option>
                         <option value="haryana">Haryana</option>
@@ -40,9 +42,9 @@
             </div>
             <div class="col">
                 <label for="gender" >Gender</label><br>
-                <label class="radio-inline" id="rd1"><input type="radio" name="optgen" checked>Male
+                <label class="radio-inline" id="rd1"><input type="radio" name="optgen" checked [(ngModel)]="user.gender">Male
                 </label>     
-                <label class="radio-inline" id="rd2"><input  type="radio" name="optgen" > Female
+                <label class="radio-inline" id="rd2"><input  type="radio" name="optgen" [(ngModel)]="user.gender"> Female
                 </label>
             </div>
         </div>

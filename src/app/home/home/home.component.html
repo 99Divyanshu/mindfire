@@ -1,13 +1,21 @@
     <div class="header">
        <img src="assets/logo.png" class="logo rounded">
-       <div class="header-left">
-           <a href="#" class="act">Home</a>
+       <div *ngFor="let x of head" class="header-left">
+           <!--<a href="#" class="act">Home</a>
            <a href="#" >Categories</a>
-           <a href="#" >More</a>
+           <a href="#" >More</a>-->
+            <a href="#" class="act"> {{x.item1}}</a> 
+            <a href="#">{{x.item2}}</a>
+            <a href="#">{{x.item3}}</a>
+
        </div>
-           <div class="header-right">
-                <a href="#" class="sign">SignUp</a>
-                <a href="#" >Login</a>
+           <div *ngFor="let y of head_rit" class="header-right">
+                <!--<a href="#" class="sign">SignUp</a>
+                <a href="#" >Login</a>-->
+                <a href="#" class="sign"> {{y.title1}}</a> 
+                <a href="#">{{y.title2}}</a>
+                
+                
            </div>
     </div>
   
