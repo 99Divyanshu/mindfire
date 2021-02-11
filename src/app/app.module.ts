@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { FormComponent } from './home/form/form.component';
 import { ImageComponent } from './home/image/image.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ImageComponent } from './home/image/image.component';
     HomeComponent,
     FooterComponent,
     FormComponent,
-    ImageComponent
+    ImageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
