@@ -40,16 +40,17 @@
                         <option value="Rajasthan">{{sta.st5}}</option>-->
                         <!--<option *ngFor = "let sta of state">{{sta.st}}</option>-->
                     </select>
-                    {{f.ele5}}
+                    state seleced: {{f.ele5}}
                    </div>         
             </div>
-            <div class="col">
+            <div class="col" *ngFor = "let g of gender">
                 <label for="gender" >Gender</label><br>
                 <label class="radio-inline" id="rd1">
-                    <input type="radio" name="optgen" checked [(ngModel)]="f.ele6">Male
+                    <input class="form-check-input" type="radio" name="optgen" checked value="Male" [(ngModel)]="f.ele6">{{g.gen1}}
                 </label>     
-                <label class="radio-inline" id="rd2"><input  type="radio" name="optgen" [(ngModel)]="f.ele6"> Female
-                </label>
+                <label class="radio-inline" id="rd2"><input class="form-check-input" type="radio" value="Female" name="optgen" [(ngModel)]="f.ele6"> {{g.gen2}}
+                </label><br>
+                gender selected:{{f.ele6}}
             </div>
         </div>
        

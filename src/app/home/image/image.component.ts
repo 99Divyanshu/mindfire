@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
+  public img_sr="assets/boot.png";
   constructor() { }
 
   ngOnInit(): void {
