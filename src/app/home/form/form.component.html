@@ -1,50 +1,54 @@
 <div class="container form">
-    <form >
-{{user | json}}
-
+    <form *ngFor="let f of form_ele">
         <div class="row">
             <div class="col" >
                 <div class="form-group"><!--form group is used for proper grouping -->
                     <label for="firstname">First Name</label>
-                    <input [(ngModel)]="user.first" [disabled]="isDisabled" type="text"  class="form-control" placeholder="Enter your first name here....">
+                    <input [(ngModel)]="f.ele1" [disabled]="isDisabled" name="f1" type="text"  class="form-control" placeholder="Enter your first name here....">
+                    your firstname:{{f.ele1}}
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="lastname">Last Name</label>
-                    <input [(ngModel)]="user.last" [disabled]="isDisabled" type="text" class="form-control" placeholder="Enter your last name here....">
+                    <input [(ngModel)]="f.ele2" [disabled]="isDisabled" name="l1" type="text" class="form-control" placeholder="Enter your last name here....">
+                    your last name:{{f.ele2}}
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input [(ngModel)]="user.email" [disabled]="isDisabled" type="email"  class="form-control" placeholder="Enter your E-mail ID here....">
+            <input [(ngModel)]="f.ele3" [disabled]="isDisabled" type="email" name="e1" class="form-control" placeholder="Enter your E-mail ID here....">
+            your email:{{f.ele3}}
         </div>
         <div class="form-group">
             <label for="contact">Contact No.</label>
-        <input [(ngModel)]="user.phone"  [disabled]="isDisabled" type="tel" class="form-control" name="f1" placeholder="Enter your contact no. here....">    
-        your contact no:{{num}}
+        <input [(ngModel)]="f.ele4"  [disabled]="isDisabled" type="tel" class="form-control" name="f2" placeholder="Enter your contact no. here....">    
+        your contact no:{{f.ele4}}
         </div>
         
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label for="state">State</label>
-                    <select name="state"  class="form-control" [(ngModel)]="user.state">
-                        <option value="Select the State"  disabled hidden selected>Select the State...</option>
-                        <option value="hp">Himachal Pradesh</option>
-                        <option value="haryana">Haryana</option>
-                        <option value="uttarakhand">Uttarakhand</option>
-                        <option value="up">Uttar Pradesh</option>
-                        <option value="rajasthan">Rajasthan</option>
+                    <select name="state" *ngFor = "let sta of state"  name="s1" class="form-control" [(ngModel)]="f.ele5">
+                        <option value="Select the State"  disabled  selected>Select the State...</option>
+                        <option value="Himachal Pradesh">{{sta.st1}}</option>
+                        <option value="Haryana">{{sta.st2}}</option>
+                        <option value="Uttarakhand">{{sta.st3}}</option>
+                        <option value="Uttar Pradesh">{{sta.st4}}</option>
+                        <option value="Rajasthan">{{sta.st5}}</option>-->
+                        <!--<option *ngFor = "let sta of state">{{sta.st}}</option>-->
                     </select>
+                    {{f.ele5}}
                    </div>         
             </div>
             <div class="col">
                 <label for="gender" >Gender</label><br>
-                <label class="radio-inline" id="rd1"><input type="radio" name="optgen" checked [(ngModel)]="user.gender">Male
+                <label class="radio-inline" id="rd1">
+                    <input type="radio" name="optgen" checked [(ngModel)]="f.ele6">Male
                 </label>     
-                <label class="radio-inline" id="rd2"><input  type="radio" name="optgen" [(ngModel)]="user.gender"> Female
+                <label class="radio-inline" id="rd2"><input  type="radio" name="optgen" [(ngModel)]="f.ele6"> Female
                 </label>
             </div>
         </div>
