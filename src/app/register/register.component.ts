@@ -16,6 +16,6 @@ export class RegisterComponent implements OnInit {
   }
   signupUser(signupForm:NgForm)
   {
-    alert(JSON.stringify(this.form_el,null,4));
+    alert(JSON.stringify(this.form_el));
   }
 }
