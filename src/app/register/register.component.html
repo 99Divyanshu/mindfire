@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
         <div class="container">
-            <form #signupForm="ngForm" *ngFor="let fo of form_el" (ngSubmit)="signupUser(signupForm);">
+            <form #signupForm="ngForm" *ngFor="let fo of form_el" (ngSubmit)="signupUser(signupForm);"  >
                 <div class="row">
                     <div class="col" >
                         <div class="form-group"><!--form group is used for proper grouping -->
@@ -97,14 +97,11 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="Country">Country</label>
-                            <input [(ngModel)]="fo.item7" name="c1" type="text" class="form-control" value="India" placeholder="Enter your country name here...." ngModel required #c1="ngModel">
+                            <input [(ngModel)]="fo.item7" name="c1" type="text" class="form-control"  placeholder="Enter your country name here...." ngModel required #c1="ngModel">
                             <div *ngIf="c1.invalid && (c1.dirty || c1.touched)"
                                 class="alert alert-danger">                               
                                 <div *ngIf="l1.hasError('required')">
                                  Country is required.
-                                </div>
-                                <div *ngIf="l1.hasError('value')">
-                                   Country needs to be India.
                                 </div>
                             </div>
                         </div>
@@ -112,17 +109,22 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="state">State</label>
-                            <select [(ngModel)]="fo.item8" name="state"  name="s1" class="form-control" ngModel required #s1="ngModel">
-                                <option value="Select the State" selected>Select the State...</option>
-                                <option value="Himachal Pradesh"></option>
-                                <option value="Haryana"></option>
-                                <option value="Uttarakhand"></option>
-                                <option value="Uttar Pradesh"></option>
-                                <option value="Rajasthan"></option>-->
+                            <select [(ngModel)]="fo.item8"  name="stat" class="form-control" ngModel required #stat="ngModel">
+                                <option value="Select the State" value=""></option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Rajasthan">Rajasthan</option>
                                 <!--<option *ngFor = "let sta of state">{{sta.st}}</option>-->
                             </select>
-                            <small class="form-text text-muted" *ngIf="s1.touched && !s1.valid">Please Select an Item!!</small>
-                           </div>         
+                            <div *ngIf="stat.invalid && (stat.dirty || stat.touched)"
+                            class="alert alert-danger">
+                                <div *ngIf="stat.hasError('required')">
+                                    Please select a state.
+                                </div>
+                            </div>
+                       </div>         
                     </div>
                 </div>
                 <div class="row">
@@ -138,21 +140,34 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input [(ngModel)]="fo.item10" name="p1" type="password" class="form-control" placeholder="Enter your password here...." ngModel required #p1="ngModel">
-                            <small class="form-text text-muted" *ngIf="p1.touched && !p1.valid">Please Enter a Valid Password!!</small>
+                            <input [(ngModel)]="fo.item10" name="p1" type="password" class="form-control" placeholder="Enter your password here...." ngModel required minlength="6" #p1="ngModel">
+                            <div *ngIf="p1.invalid && (p1.dirty || p1.touched)"
+                                class="alert alert-danger">                               
+                                <div *ngIf="p1.hasError('required')">
+                                 Please Set Password is required.
+                                </div>
+                                <div *ngIf="p1.hasError('minlength')">
+                                    Minimum length is 6 characters.
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="confirmpassword">Password</label>
-                            <input [(ngModel)]="fo.item11" name="p2" type="password" class="form-control" placeholder="Re-Enter your password here...." ngModel required #p2="ngModel">
-                            <small class="form-text text-muted" *ngIf="p2.touched && !p2.valid">Please Check the Field!!</small>
+                            <input [(ngModel)]="fo.item11" name="p2" type="password" class="form-control" placeholder="Re-Enter your password here...." ngModel required   #p2="ngModel">
+                            <div *ngIf="p2.invalid && (p2.dirty || p2.touched)"
+                                class="alert alert-danger">                               
+                                <div *ngIf="p2.hasError('required')">
+                                 Please fill Confirm Password field.
+                                </div>
+                            </div>
                         </div>
                     </div>                    
                 </div>
              <div class="row2">
-                   <button  type="submit" class="btn btn-primary" >Submit</button>
-                  <button  type="button" class="btn btn-danger" >Clear</button>
+                   <button  type="submit" class="btn btn-primary" [disabled]="signupForm.invalid" >Submit</button>
+                  <button  type="reset" class="btn btn-danger"  >Clear</button>
              </div>
                      
             </form>
