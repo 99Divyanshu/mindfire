@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeService } from './home/home.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mindfire';
+
+  constructor(private api:HomeService){}
+
+  ngOnInit()
+  {
+    this.api.getMessage().subscribe((data)=>{
+      alert(JSON.stringify(data,null,4));
+    })
+  }
+
 }
 
