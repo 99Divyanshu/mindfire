@@ -156,12 +156,9 @@
                         <div class="form-group">
                             <label for="confirmpassword">Password</label>
                             <input [(ngModel)]="fo.item11" name="p2" type="password" class="form-control" placeholder="Re-Enter your password here...." ngModel required   #p2="ngModel">
-                            <div *ngIf="p2.invalid && (p2.dirty || p2.touched)"
-                                class="alert alert-danger">                               
-                                <div *ngIf="p2.hasError('required')">
-                                 Please fill Confirm Password field.
-                                </div>
-                            </div>
+                            <div class="alert alert-danger" *ngIf="fo.item10!=fo.item11 && p2.touched" >              
+                                Password not matching
+                              </div>
                         </div>
                     </div>                    
                 </div>
