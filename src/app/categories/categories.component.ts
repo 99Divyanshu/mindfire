@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonDTO } from '../common/types/commonDTO';
+import { HomeService } from '../home/home.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private my_data:HomeService){}
+  public store:CommonDTO[] | undefined ;
+  ngOnInit()
+  {
+    this.my_data.getMessage().subscribe(data => this.store =data);
   }
 
 }

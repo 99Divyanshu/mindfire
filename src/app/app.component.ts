@@ -7,16 +7,8 @@ import { HomeService } from './home/home.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mindfire';
+  title:string = 'mindfire';
 
-  constructor(private api:HomeService){}
-
-  ngOnInit()
-  {
-    this.api.getMessage().subscribe((data)=>{
-      alert(JSON.stringify(data,null,4));
-    })
-  }
-
+  
 }
 

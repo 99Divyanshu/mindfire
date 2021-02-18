@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor( private http : HttpClient) { }
  
   
 
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   {
     this.form_el.reset({});
   }*/
-  form_el=[{'item1':'','item2':'','item3':'','item4':'','item5':'','item6':'','item7':'','item8':'','item9':'','item10':'','item11':''}]
+  form_el=[{'item1':'','item2':'','item3':'','item4':'','item5':'','item6':'','item7':'','item8':'Himachal Pradesh','item9':'','item10':'','item11':''}]
   
   stateList: Array<any> = [
     { name: 'Uttar Pradesh', cities: ['Noida', 'Kanpur', 'Varanasi'] },
@@ -26,10 +27,19 @@ export class RegisterComponent implements OnInit {
     { name: 'Himachal Pradesh', cities: ['Shimla','Manali','Dalhousie'] },
     { name: 'Haryana', cities: ['Gurugram','Rohtak','Chandigarh'] },
   ];
-  cities: Array<any> | undefined;
- 
-  signupUser(signupForm:NgForm)
+  //cities: Array<any> | undefined;
+ cities=[{'city':'Varansi'},{'city':'Noida'},{'city':'Delhi'},{'city':'Manali'},{'city':'Mumbai'}]
+  changeState(count:string)
   {
-    alert(JSON.stringify(this.form_el));
+    this.cities=this.stateList.find(con=>con.name==count).cities;
+  }
+
+  signupUser(data:any)
+  {
+    
+    let url="http://httpbin.org/post";
+    this.http.post(url,data).subscribe((result)=>{console.warn("result",result)
+  })
+//    alert(JSON.stringify(this.form_el));
   }
 }
