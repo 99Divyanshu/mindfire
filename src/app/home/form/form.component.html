@@ -1,5 +1,5 @@
 <div class="container form">
-    <form *ngFor="let f of form_ele">
+    <form #formdata="ngForm" *ngFor="let f of form_ele" (ngSubmit)="onPost(formdata.value);">
         <div class="row">
             <div class="col" >
                 <div class="form-group"><!--form group is used for proper grouping -->
@@ -56,7 +56,7 @@
        
             
             <div class="row2">
-                <button [disabled]="isDisabled" type="button" class="btn btn-primary"  >Submit</button>
+                <button [disabled]="isDisabled" type="submit" class="btn btn-primary"  >Submit</button>
                 <button  type="button" class="btn btn-danger" (click)="onClick()">Clear</button>
             </div>
                

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +12,7 @@ export class FormComponent implements OnInit {
   public isDisabled=true;
   public num="";
   
-  constructor() { }
+  constructor(private http:HttpClient) { }
  // user=new FormComponent('Divyanshu','Kothari','afhfh@sgfd.com',9876543210,'','Male')
   onClick()
   {
@@ -25,6 +26,12 @@ export class FormComponent implements OnInit {
   ngOnInit(): void
    {
     
+  }
+  onPost(data:any)
+  {
+    let url="http://httpbin.org/post";
+    this.http.post(url,data).subscribe((result)=>{console.warn("result",result)
+  })
   }
 
 }
