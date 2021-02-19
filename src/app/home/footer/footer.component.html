@@ -1,13 +1,13 @@
 <div class="container footer">
     <div class="row">
         <div class="col">
-            <h4>About Us</h4>
+            <h4>{{"About Us  " + parentData}}</h4>
             <p>Wikipedia has been criticized for its uneven accuracy and for exhibiting systemic bias, including gender bias, with the majority of editors being male.Edit-a-thons have been held to encourage female editors and increase the coverage of women's topics.</p>
         </div>
         <div class="col">
             <h4>Usefull links</h4>
             <ul>
-                <li><a href="#" class="point">Home</a></li>
+                <li><a  (click)="fireEvent()" class="point">Home</a><!--<button (click)="fireEvent()">Home</button>--></li>
                 <li><a href="#" class="point">About</a></li>
                 <li><a href="#" class="point">Careers</a></li>
                 <li><a href="#" class="point">Contact</a></li>

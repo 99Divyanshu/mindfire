@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeService } from './home/home.service';
+//import { HomeService } from './home/home.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { HomeService } from './home/home.service';
 })
 export class AppComponent {
   title:string = 'mindfire';
-
-  
+  public name="Divyanshu";
+  public message=" ";
 }
 

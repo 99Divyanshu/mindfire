@@ -1,7 +1,7 @@
 export interface CommonDTO {
-    userId?: number;
-    id?: number;
-    title?: string;
-    completed?: boolean;
-   
+    postId: number;
+    id: number;
+    name: string;
+    email: string;
+    body:string;
 }

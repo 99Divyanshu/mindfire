@@ -10,10 +10,10 @@ import { HomeService } from '../home/home.service';
 export class CategoriesComponent implements OnInit {
 
   constructor(private my_data:HomeService){}
-  public store:CommonDTO[] | undefined ;
-  ngOnInit()
+  public store:CommonDTO[]=[];
+  ngOnInit():void
   {
-    this.my_data.getMessage().subscribe(data => this.store =data);
+    this.my_data.getMessage().subscribe(data=>this.store=data);
   }
 
 }

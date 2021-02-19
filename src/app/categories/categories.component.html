@@ -1,2 +1,6 @@
 <h3>Categories </h3>
-{{store |json}}
+<div class="data">
+    <ul *ngFor="let x of store"  >
+        <li>{{x.postId}}.  {{x.id}}  {{x.name}}   {{x.email}}</li>
+    </ul>
+</div>

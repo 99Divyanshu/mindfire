@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MoreDTO } from '../common/types/moreDTO';
+import { HomeService } from '../home/home.service';
 
 @Component({
   selector: 'app-more',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoreComponent implements OnInit {
 
-  constructor() { }
-
+  constructor( private more_service:HomeService) { }
+  public ar:MoreDTO[]=[];
   ngOnInit(): void {
+
+    this.more_service.getData().subscribe(data=>this.ar=data);
   }
 
 }
