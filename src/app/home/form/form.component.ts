@@ -23,15 +23,20 @@ export class FormComponent implements OnInit {
   form_ele=[{'ele1':'Divyanshu','ele2':'Kothari','ele3':'absa@adas.com','ele4':'9876543210','ele5':'','ele6':''}]
   state=[{'st1':'Himachal Pradesh','st2':'Haryana','st3':'Uttarakhand','st4':'Uttar Pradesh','st5':'Rajasthan'}]
   gender=[{'gen1':'Male','gen2':'Female'}]
+  result:any=[{}];
   ngOnInit(): void
    {
     
   }
   onPost(data:any)
   {
-    let url="http://httpbin.org/post";
-    this.http.post(url,data).subscribe((result)=>{console.warn("result",result)
-  })
+    let url="http://httpbin.org/post"
+    this.http.post(url,{
+      form_ele:this.form_ele
+    }).toPromise().then((data:any) => {
+      console.log(JSON.stringify(this.form_ele))
+      this.result=this.form_ele;
+    })
   }
 
 }
