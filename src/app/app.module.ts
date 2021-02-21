@@ -8,11 +8,11 @@ import { FooterComponent } from './common/footer/footer.component';
 import { FormComponent } from './home/form/form.component';
 import { ImageComponent } from './home/image/image.component';
 import { RegisterComponent } from './sign_up/register/register.component';
-import { CategoriesComponent } from '../header_elements/categories/categories.component';
-import { MoreComponent } from '../header_elements/more/more.component';
+import { CategoriesComponent } from './header_elements/categories/categories.component';
+import { MoreComponent } from './header_elements/more/more.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeService } from './home/home.service';
+import { HomeService } from './services/home.service';
 
 @NgModule({
   declarations: [
