@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit,OnChanges {
   head =[{'item1':'Home','item2':'Categories','item3':'More'}];
   head_rit =[{'title1':'Sign Up','title2':'LogIn'}];
   //public im="assets/logo.png";
-  isDisplay=true;
+  isDisplay:boolean=true;
   toggleDisplay()
   {
     this.isDisplay=!this.isDisplay;

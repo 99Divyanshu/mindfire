@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonDTO } from '../common/types/commonDTO';
-import { HomeService } from '../home/home.service';
+import { CommonDTO } from '../../app/common/types/commonDTO';
+import { HomeService } from '../../app/home/home.service';
 
 @Component({
   selector: 'app-categories',

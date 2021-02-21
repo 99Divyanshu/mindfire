@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CategoriesComponent} from './categories/categories.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import {MoreComponent} from './more/more.component';
-import {RegisterComponent} from './register/register.component';
+import {CategoriesComponent} from '../header_elements/categories/categories.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
+import {MoreComponent} from '../header_elements/more/more.component';
+import {RegisterComponent} from './sign_up/register/register.component';
 const routes: Routes = [
   {path:'homepage',component:HomepageComponent},
   {path: 'categories',component:CategoriesComponent},

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MoreDTO } from '../common/types/moreDTO';
-import { HomeService } from '../home/home.service';
+import { MoreDTO } from '../../app/common/types/moreDTO';
+import { HomeService } from '../../app/home/home.service';
 
 @Component({
   selector: 'app-more',
