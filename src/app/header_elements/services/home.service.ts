@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CommonDTO } from '../common/types/commonDTO';
-import { MoreDTO } from '../common/types/moreDTO';
+import { CommonDTO } from '../../common/types/commonDTO';
+import { MoreDTO } from '../../common/types/moreDTO';
 
 @Injectable({
   providedIn: 'root'

@@ -12,7 +12,10 @@ import { CategoriesComponent } from './header_elements/categories/categories.com
 import { MoreComponent } from './header_elements/more/more.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeService } from './services/home.service';
+import { HomeService } from './header_elements/services/home.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptorService } from './common/loader/services/loader-interceptor.service';
+import { LoaderComponent } from './common/loader/component/loader.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { HomeService } from './services/home.service';
     CategoriesComponent,
     MoreComponent,
     HomepageComponent,
-    routingComponents
+    routingComponents,
+    LoaderComponent
 
   ],
   imports: [
@@ -35,7 +39,7 @@ import { HomeService } from './services/home.service';
     FormsModule
 
   ],
-  providers: [HomeService],
+  providers: [HomeService,{provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
