@@ -9,11 +9,12 @@
            <div *ngFor="let y of head_rit" class="header-right">
                 <!--<a href="#" class="sign">SignUp</a>
                 <a href="#" >Login</a>-->
-                <div [hidden]="!isDisplay">
-                    <a href="/register"  class="sign" (click)="toggleDisplay()"> {{y.title1}}</a>
+                <div *ngIf="!isDisplay">
+                    <a href="/register"  class="sign" > {{y.title1}}</a>
                 </div>
-                <div [hidden]="isDisplay">
-                    <a href="#"  (click)="toggleDisplay()">{{y.title2}}</a>
+                <div *ngIf="isDisplay">
+                    <!--<a href="#"  (click)="toggleDisplay()">{{y.title2}}</a>-->
+                    <h4 class="txt">Welcome Divyanshu!!</h4>
                 </div>                 
                    
            </div>

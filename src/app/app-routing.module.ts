@@ -4,12 +4,17 @@ import {CategoriesComponent} from './header_elements/categories/categories.compo
 import { HomepageComponent } from './home/homepage/homepage.component';
 import {MoreComponent} from './header_elements/more/more.component';
 import {RegisterComponent} from './sign_up/register/register.component';
+import { AuthGuard } from './login/auth/auth.guard';
+import { LoginComponent } from './login/component/login.component';
+
+
 const routes: Routes = [
-  {path:'homepage',component:HomepageComponent},
-  {path: 'categories',component:CategoriesComponent},
-  {path: 'more',component:MoreComponent},
+  {path:"login",component:LoginComponent },
+  {path:'homepage',canActivate:[AuthGuard], component:HomepageComponent},
+  {path: 'categories',canActivate:[AuthGuard],component:CategoriesComponent},
+  {path: 'more',canActivate:[AuthGuard],component:MoreComponent},
   {path: 'register',component:RegisterComponent},
-  { path: '**', redirectTo: 'homepage' }
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({

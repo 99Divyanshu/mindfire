@@ -16,6 +16,8 @@ import { HomeService } from './header_elements/services/home.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptorService } from './common/loader/services/loader-interceptor.service';
 import { LoaderComponent } from './common/loader/component/loader.component';
+import { AuthGuard } from './login/auth/auth.guard';
+import { LoginComponent } from './login/component/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { LoaderComponent } from './common/loader/component/loader.component';
     MoreComponent,
     HomepageComponent,
     routingComponents,
-    LoaderComponent
+    LoaderComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -39,7 +42,7 @@ import { LoaderComponent } from './common/loader/component/loader.component';
     FormsModule
 
   ],
-  providers: [HomeService,{provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptorService,multi:true}],
+  providers: [HomeService,{provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptorService,multi:true},AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
